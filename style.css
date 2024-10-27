@@ -1,0 +1,129 @@
+:root {
+  --font-family-heading: "Anton", sans-serif;
+  --font-family-body: "Noto Sans JP", sans-serif;
+
+  --color-white: #fffefc;
+  --color-black: #020911;
+  --color-accent-red: #f20574;
+  --color-accent-yellow: #f2e52e;
+  --color-background-black: #171525;
+  --color-background-navy: #030427;
+  --color-form-background-yellow: #fffab9;
+  --color-form-placeholder-gray: #ad9783;
+  --color-form-border-red: #df6da2;
+  --color-button-hover-red: #f043a5;
+  --color-course-hover-yellow: #f4e877;
+  --color-hero-overlay: rgba(57, 24, 111, 0.4);
+  --color-course-overlay: rgba(32, 8, 19, 0.63);
+}
+
+/* global　*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+}
+
+img {
+  display: block;
+}
+
+/* header */
+.header {
+  height: 80px;
+  background-color: var(--color-background-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo-wrapper {
+  margin: 0;
+}
+
+.header-logo {
+  height: 50px;
+}
+
+@media (max-width: 750px) {
+  .header {
+    height: 60px;
+  }
+
+  .header-logo {
+    height: 30px;
+  }
+}
+
+/* hero */
+.hero {
+  background-image: url("./img/hero.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 94px 40px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-hero-overlay);
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.hero-texts {
+  color: var(--color-accent-yellow);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero-main-copy {
+  font-family: var(--font-family-heading);
+  font-size: 64px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.hero-main-copy-accent {
+  color: var(--color-accent-red);
+}
+
+.hero-sub-copy {
+  margin: 0;
+}
+
+@media (max-width: 750px) {
+  .hero {
+    margin-top: 60px;
+    padding: 40px 20px;
+  }
+
+  .hero-container {
+    justify-content: flex-start;
+  }
+
+  .hero-texts {
+    gap: 20px;
+  }
+}
